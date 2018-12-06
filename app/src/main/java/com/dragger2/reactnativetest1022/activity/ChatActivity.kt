@@ -5,9 +5,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.TextView
-import com.dragger2.reactnativetest1022.base.adapter.CommonAdapter
-import com.dragger2.reactnativetest1022.base.BaseActivity
 import com.dragger2.reactnativetest1022.R
+import com.dragger2.reactnativetest1022.base.BaseActivity
+import com.dragger2.reactnativetest1022.base.adapter.CommonAdapter
 import com.dragger2.reactnativetest1022.bean.ChatActivityBean
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -31,6 +31,7 @@ class ChatActivity : BaseActivity() {
     private val mList = ArrayList<ChatActivityBean>()
     private var sort = ""       //上个页面带过来的参数
     private var mDisposable: Disposable? = null
+
 
     override fun bindLayout(): Int {
         return R.layout.activity_chat
