@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srlTwoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlDragRate="0.6"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlHeaderHeight="70dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/ivTwoActivityRefresh"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvTwoActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <CheckBox
+        android:id="@+id/cbTwoActivityContentSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="下拉内容跟随"
+        />
+
+    <CheckBox
+        android:id="@+id/cbTwoActivityAnimalSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="15dp"
+        android:text="下拉播放动画"
+        />
+</RelativeLayout>

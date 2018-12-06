@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffffff</color>
+    <!--点击效果颜色-->
+    <color name="writeColorPress">#80bbbbbb</color>
+    <!--可以点击颜色-->
+    <color name="sendTextColor">#ff5cc2d0</color>
+    <!--不可以点击颜色-->
+    <color name="notSendTextColor">#ffcfcfcf</color>
+    <!--默认背景颜色-->
+    <color name="defaultBackGroundColor">#ffeeeeee</color>
+    <!-- 线 -->
+    <color name="lineHint">#ffdcdcdc</color>
+</resources>

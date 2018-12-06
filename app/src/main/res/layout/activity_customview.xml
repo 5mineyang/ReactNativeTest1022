@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习1"
+        />
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习2"
+        />
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习3"
+        />
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习4"
+        />
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习5"
+        />
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习6"
+        />
+
+    <TextView
+        android:id="@+id/tvCustomViewPractice7"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffdddddd"
+        android:gravity="center"
+        android:text="绘制view练习7"
+        />
+</LinearLayout>

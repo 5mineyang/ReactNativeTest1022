@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    >
+    <item android:drawable="@drawable/bookload1" android:duration="100"/>
+    <item android:drawable="@drawable/bookload2" android:duration="100"/>
+    <item android:drawable="@drawable/bookload3" android:duration="100"/>
+    <item android:drawable="@drawable/bookload4" android:duration="100"/>
+    <item android:drawable="@drawable/bookload5" android:duration="100"/>
+    <item android:drawable="@drawable/bookload6" android:duration="100"/>
+    <item android:drawable="@drawable/bookload7" android:duration="100"/>
+    <item android:drawable="@drawable/bookload8" android:duration="100"/>
+    <item android:drawable="@drawable/bookload9" android:duration="100"/>
+    <item android:drawable="@drawable/bookload10" android:duration="100"/>
+    <item android:drawable="@drawable/bookload11" android:duration="100"/>
+    <item android:drawable="@drawable/bookload12" android:duration="100"/>
+    <item android:drawable="@drawable/bookload13" android:duration="100"/>
+    <item android:drawable="@drawable/bookload14" android:duration="100"/>
+    <item android:drawable="@drawable/bookload15" android:duration="100"/>
+    <item android:drawable="@drawable/bookload16" android:duration="100"/>
+    <item android:drawable="@drawable/bookload17" android:duration="100"/>
+    <item android:drawable="@drawable/bookload18" android:duration="100"/>
+    <item android:drawable="@drawable/bookload19" android:duration="100"/>
+    <item android:drawable="@drawable/bookload20" android:duration="100"/>
+</animation-list>

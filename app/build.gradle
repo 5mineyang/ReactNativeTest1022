@@ -1,0 +1,213 @@
+import com.android.build.gradle.api.ApplicationVariant
+import com.android.builder.core.DefaultProductFlavor
+import org.gradle.api.internal.DefaultDomainObjectSet
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+//    signingConfigs {
+//        release {
+//            keyAlias props['RELEASE_KEY_ALIAS']
+//            keyPassword props['RELEASE_KEY_PASSWORD']
+//            storeFile file(props['RELEASE_STORE_FILE'])
+//            storePassword props['RELEASE_STORE_PASSWORD']
+//        }
+//    }
+
+    defaultConfig {
+        applicationId "com.dragger2.reactnativetest1022"
+        customAppName(applicationVariants, defaultConfig)
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "default"]
+
+        ndk {
+            // https://developer.android.com/ndk/guides/abis.html#sa
+            //arm64-v8a,armeabi,x86,x86_64
+            abiFilters "armeabi-v7a"
+        }
+
+        buildConfigField("boolean", "IS_DEBUG", "false")//是否是测试，默认不是测试
+        buildConfigField("String", "APP_DIR", "\"55\"")//SD目录名
+
+        flavorDimensions "default"//常量默认值
+        //编译信息
+        resValue "string", "build_time", buildTime()
+        resValue "string", "build_host", hostName()
+        resValue "string", "appname", "55"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+
+    buildTypes {
+        release {
+//            signingConfig signingConfigs.release
+            //混淆开启
+            minifyEnabled true
+            //是否zip对齐
+            zipAlignEnabled true
+            // 缩减resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField("String", "bugly_appId", "\"6febe8eeb9\"")
+        }
+        debug {
+//            signingConfig signingConfigs.release
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            debuggable true
+            buildConfigField("String", "bugly_appId", "\"16f5bf0edb\"")
+        }
+    }
+
+    productFlavors {
+        on {
+            buildConfigField("String", "SERVER_IP", "\"http://app.ing8.cn/\"")
+            resValue "string", "appname", "55"
+        }
+        off {
+//            applicationIdSuffix ".dev.off"
+            buildConfigField("boolean", "IS_DEBUG", "true")
+            buildConfigField("String", "SERVER_IP", "\"http://testyingyong.51youke.com:8888/\"")
+//            buildConfigField("String", "SERVER_IP", "\"http://jiangxiaobai.natapp1.cc/\"")
+            buildConfigField("String", "APP_DIR", "\"55Debug\"")
+
+            resValue "string", "appname", "55test"
+            resValue "string", "appdir", "55Test"
+        }
+        tstLocal {
+            applicationIdSuffix ".dev.local"
+            buildConfigField("boolean", "IS_DEBUG", "true")
+            buildConfigField("String", "SERVER_IP", "\"http://jiangxiaobai.natapp1.cc/\"")
+            buildConfigField("String", "APP_DIR", "\"55Local\"")
+
+            resValue "string", "appname", "55local"
+            resValue "string", "appdir", "55Local"
+        }
+    }
+
+    sourceSets { main.java.srcDirs += 'src/main/kotlin' }
+
+    aaptOptions { cruncherEnabled = false }
+
+    lintOptions {
+        //在打包Release版本的时候不进行检测
+        checkReleaseBuilds false
+        // 有报错也不会停止打包
+        abortOnError false
+    }
+
+//    greendao {
+//        schemaVersion 2
+//        daoPackage 'com.dragger2.reactnativetest1022.base.greendao.gen' //自动生成的工具类的包名
+//        targetGenDir 'src/main/java' //路径
+//    }
+}
+
+def outputDir() {
+    return project.buildDir.absolutePath + "/outputs/apk"
+}
+
+def customAppName(DefaultDomainObjectSet<ApplicationVariant> applicationVariants, DefaultProductFlavor defaultConfig) {
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "55-${variant.buildType.name}-${defaultConfig.versionName}-${new Date().format("yyyy-MM-dd")}-${variant.productFlavors[0].name}.apk".toLowerCase()
+        }
+    }
+}
+
+//编译时间
+def buildTime() {
+    return new Date().format("yyyy-MM-dd HH:mm:ss")
+}
+
+//编译机器
+def hostName() {
+    return System.getProperty("user.name") + "@" + InetAddress.localHost.hostName
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+//    testImplementation 'junit:junitjunit:4.12'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation rootProject.ext.dependencies.junit
+    androidTestImplementation(rootProject.ext.dependencies.test_espresso_core) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation rootProject.ext.dependencies.test_runner
+    implementation rootProject.ext.dependencies.appcompatV7
+    //kotlin
+    implementation rootProject.ext.dependencies.kotlin
+    //swipeLayout 屏幕边缘右滑返回
+    implementation rootProject.ext.dependencies.swipeLayout
+    //隐藏菜单
+    implementation rootProject.ext.dependencies.design
+    //RecyclerView
+    implementation rootProject.ext.dependencies.recyclerView
+    //Rxjava
+    implementation rootProject.ext.dependencies.rxjava
+    //Rxandroid
+    implementation rootProject.ext.dependencies.rxandroid
+    //协程
+    implementation rootProject.ext.dependencies.coroutines_core
+    //网络请求
+    implementation rootProject.ext.dependencies.retrofit2
+    implementation rootProject.ext.dependencies.retrofit2_converter_gson
+    implementation rootProject.ext.dependencies.retrofit2_adapter_rxjava2
+    //view移动点击事件跟随
+    implementation rootProject.ext.dependencies.nineoldandroids
+    //权限
+    implementation rootProject.ext.dependencies.easypermissions
+    //数据库
+    implementation rootProject.ext.dependencies.greendao
+    //SmartRefreshLayou下拉刷新
+    implementation rootProject.ext.dependencies.smartRefreshLayou
+    //glide加载
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.glide_compiler
+    //阿里热修复
+    implementation rootProject.ext.dependencies.hotfix
+    //单元测试
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+allprojects {
+    //版本冲突：强制使用某版本依赖
+    configurations.all {
+        resolutionStrategy.force rootProject.ext.dependencies.annotations
+        resolutionStrategy.force rootProject.ext.dependencies.appcompatV4
+    }
+}
+
+kotlin {
+    experimental {
+        coroutines 'enable'
+    }
+}

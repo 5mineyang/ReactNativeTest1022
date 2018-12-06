@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_na"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffaaaaaa"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/main_menu"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:background="@mipmap/ic_launcher"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:text="洋"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:background="@mipmap/ic_launcher_round"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvToNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="下一页"
+            />
+
+        <TextView
+            android:id="@+id/tvToNextLoadingOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvToNext"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="图片线程显示Loading"
+            />
+
+        <TextView
+            android:id="@+id/tvToNextLoadingTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvToNextLoadingOne"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="动画循环播放Loading"
+            />
+
+        <TextView
+            android:id="@+id/tvToNextViewPractice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvToNextLoadingTwo"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="绘制view练习"
+            />
+
+        <TextView
+            android:id="@+id/tvToNextLayoutPractice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvToNextViewPractice"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="绘制layout练习"
+            />
+
+
+        <TextView
+            android:id="@+id/tvAndFix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="计算结果"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvAndFix"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            >
+
+            <Button
+                android:id="@+id/btnAndFixCalculation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:enabled="false"
+                android:text="计算(热修复)"
+                />
+
+            <Button
+                android:id="@+id/btnAndFixRecovery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:enabled="false"
+                android:text="恢复bug"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llToNextShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvToNext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/tvToNextShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffaaaaaa"
+                android:padding="10dp"
+                android:text="进入分享页面"
+                />
+
+            <TextView
+                android:id="@+id/tvToNextGlide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="#ffaaaaaa"
+                android:padding="10dp"
+                android:text="Glide练习"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvToNextNestedScrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/llToNextShare"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="#ffaaaaaa"
+            android:padding="10dp"
+            android:text="NestedScrollView滑动"
+            />
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/head"
+        app:menu="@menu/new_menu"
+        >
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

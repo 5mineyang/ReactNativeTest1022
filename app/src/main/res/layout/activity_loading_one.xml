@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <com.dragger2.reactnativetest1022.view.customviewpractice.DrawView1
+        android:id="@+id/dw1CustomView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bitmap_src="@drawable/flip_board"
+        />
+
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/ivLoadingActivityOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_one"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivityTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_two"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivityThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_three"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivityFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_four"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivityFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_five"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivitySix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_six"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivitySeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_seven"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLoadingActivityEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loader_eight"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+    <com.dragger2.reactnativetest1022.view.windview.PeriscopeLayout
+        android:id="@+id/plLodingOneActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <Button
+        android:id="@+id/btnLodingOneActivityClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="点击"
+        />
+</RelativeLayout>

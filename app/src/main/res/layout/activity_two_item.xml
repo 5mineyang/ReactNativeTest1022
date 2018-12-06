@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.dragger2.reactnativetest1022.base.view.SwipeMenuLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeMenuLayout"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/defaultBackGroundColor"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rlTwoActivityItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple_bg"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivTwoActivity"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <TextView
+            android:id="@+id/tvTwoActivityRvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/ivTwoActivity"
+            android:text="message"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ffcccccc"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnTop"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="#d9dee4"
+        android:text="置顶"
+        android:textColor="@android:color/white"
+        />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="#d9dee4"
+        android:text="删除"
+        android:textColor="@android:color/white"
+        />
+</com.dragger2.reactnativetest1022.base.view.SwipeMenuLayout>
