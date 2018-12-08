@@ -26,7 +26,7 @@ public class Test {
         list.add(new Mahjong(3, 2));
         list.add(new Mahjong(1, 3));
         list.add(new Mahjong(3, 9));
-        System.out.println(list);
+        System.out.println(list.toString());
         radixSort(list);
         System.out.println(list);
     }

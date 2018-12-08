@@ -25,8 +25,8 @@ public class Test {
         //        linkedList.remove(2);                       //3 66 1 2 3
         //        linkedList.remove(linkedList.size - 1);     //3 66 3 1 2
 
-        for (int i = 0; i < linkedList.size; i++) {
-            if (i != linkedList.size - 1) {
+        for (int i = 0; i < linkedList.size(); i++) {
+            if (i != linkedList.size() - 1) {
                 System.out.print(linkedList.get(i) + ",");
             } else {
                 System.out.println(linkedList.get(i));
@@ -34,7 +34,7 @@ public class Test {
         }
 
         //测试
-        System.out.println("size=" + linkedList.size);
+        System.out.println("size=" + linkedList.size());
         int testNum = 3;
         System.out.println("first= " + linkedList.getFirst());
         //        System.out.println("第"+testNum+"个="+linkedList.get(testNum));
@@ -46,8 +46,8 @@ public class Test {
         linkedList2.add(333);
         linkedList.addAll(linkedList2);
         System.out.print("\naddAll后的值：");
-        for (int i = 0; i < linkedList.size; i++) {
-            if (i != linkedList.size - 1) {
+        for (int i = 0; i < linkedList.size(); i++) {
+            if (i != linkedList.size() - 1) {
                 System.out.print(linkedList.get(i) + ",");
             } else {
                 System.out.println(linkedList.get(i));
@@ -55,14 +55,14 @@ public class Test {
         }
 
         linkedList.clear();
-        System.out.println("clear()后size=" + linkedList.size);
+        System.out.println("clear()后size=" + linkedList.size());
 
         linkedList.add(5);
         linkedList.add(7);
         linkedList.add(7);
         System.out.print("\n重现添加后的值：");
-        for (int i = 0; i < linkedList.size; i++) {
-            if (i != linkedList.size - 1) {
+        for (int i = 0; i < linkedList.size(); i++) {
+            if (i != linkedList.size() - 1) {
                 System.out.print(linkedList.get(i) + ",");
             } else {
                 System.out.println(linkedList.get(i));
@@ -71,8 +71,8 @@ public class Test {
 
         linkedList.update(1,6);
         System.out.print("\n修改后的值：");
-        for (int i = 0; i < linkedList.size; i++) {
-            if (i != linkedList.size - 1) {
+        for (int i = 0; i < linkedList.size(); i++) {
+            if (i != linkedList.size() - 1) {
                 System.out.print(linkedList.get(i) + ",");
             } else {
                 System.out.println(linkedList.get(i));

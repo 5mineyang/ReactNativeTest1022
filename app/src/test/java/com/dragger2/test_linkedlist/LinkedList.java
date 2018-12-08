@@ -17,7 +17,11 @@ public class LinkedList<Y> {
     //尾节点
     private Node<Y> last;
     //大小
-    int size = 0;
+    private int size = 0;
+
+    public int size() {
+        return size;
+    }
 
     /**
      * 节点
@@ -84,12 +88,28 @@ public class LinkedList<Y> {
      * @param linkedList
      */
     public void addAll(LinkedList<Y> linkedList) {
-        Y item;
-        for (int i = 0; i < linkedList.size; i++) {
-            item = linkedList.get(i);
-            //一个个添加
-            linkedLast(item);
+        //如果添加进来的linkedList size是0 就返回
+        if (linkedList.size == 0) {
+            return;
         }
+        //如果当前链表是空的 就直接把first和last指向添加进来的就行了
+        if (size == 0) {
+            first = linkedList.first;
+            last = linkedList.last;
+            size = linkedList.size;
+        } else {    //把当前的last赋值为linkedList的last  然后lNode的后继指向linkedList的第一个 linkedList的前驱指向lNode
+            Node<Y> lNode = last;
+            last = linkedList.last;
+            lNode.next = linkedList.first;
+            linkedList.first.prev = lNode;
+            size = size + linkedList.size;
+        }
+        //        Y item;
+        //        for (int i = 0; i < linkedList.size; i++) {
+        //            item = linkedList.get(i);
+        //            //一个个添加
+        //            linkedLast(item);
+        //        }
     }
 
     /**
@@ -109,6 +129,20 @@ public class LinkedList<Y> {
     public void remove(int index) {
         Node<Y> target = node(index);
         unlinkNode(target);
+    }
+
+    /**
+     * 移除值 再返回移除的值
+     *
+     * @return
+     */
+    public Y remove() {
+        //依次从第一个开始移除
+        Node<Y> item = node(0);
+        Y y = item.item;
+        first = item.next;
+        size--;
+        return y;
     }
 
     /**
