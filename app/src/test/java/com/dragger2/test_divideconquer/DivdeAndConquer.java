@@ -15,7 +15,7 @@ import org.junit.Test;
 public class DivdeAndConquer {
     @Test
     public void Test() {
-        int arrayTest[] = new int[] {10, 17, 8, 11, 13, 6, 14, 7, 4, 20, 9};
+        int arrayTest[] = new int[] {10, 17, 8, 11, 13, 6, 14, 11, 4, 17, 10};
         //快排法
         quickSort(arrayTest, 0, arrayTest.length - 1);
         System.out.print("快排法：");
@@ -25,7 +25,7 @@ public class DivdeAndConquer {
         int key = 13;
         System.out.println("\n二分查找：" + key + "在arrayTest数组里的第 " + twoPointsSelect(arrayTest, 0, arrayTest.length - 1, key) + " 个下标");
 
-        int arrayTest2[] = new int[] {10, 17, 8, 11, 13, 6, 14, 7, 4, 20, 9};
+        int arrayTest2[] = new int[] {10, 17, 8, 11, 13, 6, 14, 11, 4, 17, 10};
         mergeSort(arrayTest2, 0, arrayTest2.length - 1);
         System.out.print("\n归并法：");
         for (int i = 0; i < arrayTest2.length; i++) {
@@ -81,7 +81,7 @@ public class DivdeAndConquer {
         while (low < heigh) {
             if (direction) {
                 for (int i = heigh; i > low; i--) {
-                    if (x > array[i]) {
+                    if (x >= array[i]) {
                         //把当前low指针位置的值赋值为大于x的值 然后把heigh指针前移
                         array[low++] = array[i];
                         heigh = i;
