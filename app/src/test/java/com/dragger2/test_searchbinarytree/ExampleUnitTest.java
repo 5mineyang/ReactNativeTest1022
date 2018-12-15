@@ -7,7 +7,7 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         SearchBinaryTree tree = new SearchBinaryTree();
         //测试数组
-        int[] array = new int[] {5, 7, 2, 3, 4, 1, 6, 6, 8, 9, 10, 1, 2, 6};
+        int[] array = new int[] {5, 2, 7, 3, 4, 1, 6};
         System.out.print("初始化数组：");
         for (int i : array) {
             tree.put(i);

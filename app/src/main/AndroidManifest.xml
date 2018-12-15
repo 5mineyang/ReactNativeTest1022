@@ -56,6 +56,7 @@
         <activity android:name=".activity.ShareActivity"/>
         <activity android:name=".activity.NestedScrollViewActivity"/>
         <activity android:name=".activity.GlideActivity"/>
+        <activity android:name=".activity.MainTabLayoutActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.ume.browser.fileprovider"

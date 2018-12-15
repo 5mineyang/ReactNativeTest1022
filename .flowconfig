@@ -2,7 +2,7 @@
 ; We fork some components by platform
 .*/*[.]android.js
 
-; Ignore templates for 'react-native init'
+; Ignore templates for 'react-native initListener'
 .*/local-cli/templates/.*
 
 ; Ignore the Dangerfile

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_marginEnd="15dp"
+    android:layout_marginStart="15dp"
+    android:background="@drawable/ripple_bg_drawable_radius20_gray"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/llYingyingCompanyTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:text="企业信息"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svYingyingCompany"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llYingyingCompanyTop"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="9dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@mipmap/ic_launcher"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="上海雷默广告有限公司"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:orientation="horizontal"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="17.5dp"
+                                android:text="有限责任公司"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100人-300人"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text="广告业"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e5e5e5"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rvYingyingCompany"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:paddingEnd="-5dp"
+                        android:paddingStart="-5dp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e5e5e5"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="11dp"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="11dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="地址："
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="11dp"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="11dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="简介："
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆上海市松江区九亭镇上海市松江区九亭镇沪松公路1399弄九号公馆"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

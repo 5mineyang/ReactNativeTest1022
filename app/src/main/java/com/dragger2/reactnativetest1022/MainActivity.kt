@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.dragger2.reactnativetest1022.activity.*
+import com.dragger2.reactnativetest1022.view.MyBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -94,6 +95,19 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, NestedScrollViewActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left)
+        }
+
+        //tabLayout+viewPager当主页练习
+        tvToNextMain.setOnClickListener {
+            val intent = Intent(this, MainTabLayoutActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left)
+        }
+
+        //BottomSheetDialogFragment弹框
+        ivBottomSheetDialog.setOnClickListener {
+            val dialog = MyBottomSheetDialogFragment()
+            dialog.show(supportFragmentManager,"yang")
         }
 
         //左上角菜单点击

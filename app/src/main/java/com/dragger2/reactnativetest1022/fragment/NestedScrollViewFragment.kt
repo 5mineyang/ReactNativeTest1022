@@ -49,7 +49,6 @@ class NestedScrollViewFragment : Fragment() {
     private fun initAdapter() {
         mLayoutManager = GridLayoutManager(context, 2)
         rvNestedScrollViewViewPager.layoutManager = mLayoutManager
-//        rvNestedScrollViewViewPager.isNestedScrollingEnabled = false
         mAdapter = CommonAdapter(context, R.layout.fragment_nestedscrollview_item, mList, holderConvert = { holder, t, _, _ ->
             holder.apply {
                 setText(R.id.tvNestedScrollViewViewPagerRv, t)
