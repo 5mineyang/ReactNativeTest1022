@@ -206,6 +206,14 @@
             android:layout_below="@+id/tvToNextMain"
             android:src="@mipmap/ic_launcher"
             />
+
+        <Button
+            android:id="@+id/tvToNextJsoup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="下个jsoup页面练习"
+            />
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
@@ -213,7 +221,7 @@
         android:id="@+id/nav"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/head"
         app:menu="@menu/new_menu"

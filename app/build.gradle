@@ -194,6 +194,8 @@ dependencies {
     implementation rootProject.ext.dependencies.hotfix
     //单元测试
     testImplementation 'junit:junit:4.12'
+    //爬html网页数据
+    implementation rootProject.ext.dependencies.jsoup
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':FlycoTabLayout_Lib')

@@ -2,8 +2,6 @@ package com.dragger2.reactnativetest1022.activity
 
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
-import android.support.v4.widget.NestedScrollView
-import android.util.Log
 import com.dragger2.reactnativetest1022.R
 import com.dragger2.reactnativetest1022.base.BaseActivity
 import com.dragger2.reactnativetest1022.fragment.NestedScrollViewFragment
@@ -45,10 +43,10 @@ class NestedScrollViewActivity : BaseActivity() {
 //            true
 //        }
 
-        //ScrollView滑动监听
-        nsvNestedScrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
-            Log.d("NestedScrollActivity", "NestedScrollView：${v},scrollX：${scrollX},scrollY：${scrollY}，oldScrollX：${oldScrollX},oldScrollY：${oldScrollY}")
-        }
+//        //ScrollView滑动监听
+//        nsvNestedScrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+//            Log.d("NestedScrollActivity", "NestedScrollView：${v},scrollX：${scrollX},scrollY：${scrollY}，oldScrollX：${oldScrollX},oldScrollY：${oldScrollY}")
+//        }
     }
 
     private fun initAdapter() {

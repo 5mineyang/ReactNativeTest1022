@@ -110,6 +110,13 @@ class MainActivity : AppCompatActivity() {
             dialog.show(supportFragmentManager,"yang")
         }
 
+        //jsoup页面练习
+        tvToNextJsoup.setOnClickListener {
+            val intent = Intent(this, JsoupPracticeActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left)
+        }
+
         //左上角菜单点击
         main_menu.setOnClickListener {
             if (activity_na.isDrawerOpen(nav)) {
