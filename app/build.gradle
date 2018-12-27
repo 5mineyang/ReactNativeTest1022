@@ -37,7 +37,11 @@ android {
             //arm64-v8a,armeabi,x86,x86_64
             abiFilters "armeabi-v7a"
         }
-
+        repositories{
+            flatDir{
+                dirs 'libs'
+            }
+        }
         buildConfigField("boolean", "IS_DEBUG", "false")//是否是测试，默认不是测试
         buildConfigField("String", "APP_DIR", "\"55\"")//SD目录名
 
@@ -196,6 +200,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     //爬html网页数据
     implementation rootProject.ext.dependencies.jsoup
+    //扫描sdk
+    implementation(name: 'idauthsdk', ext: 'aar')
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':FlycoTabLayout_Lib')

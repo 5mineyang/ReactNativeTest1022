@@ -117,6 +117,13 @@ class MainActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left)
         }
 
+        //身份认证练习
+        tvToNextIdentityAuth.setOnClickListener {
+            val intent = Intent(this, MainActivity_Java::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left)
+        }
+
         //左上角菜单点击
         main_menu.setOnClickListener {
             if (activity_na.isDrawerOpen(nav)) {

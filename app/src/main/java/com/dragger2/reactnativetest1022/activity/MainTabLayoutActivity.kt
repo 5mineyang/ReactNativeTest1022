@@ -6,6 +6,7 @@ import com.dragger2.reactnativetest1022.R
 import com.dragger2.reactnativetest1022.base.BaseActivity
 import com.dragger2.reactnativetest1022.bean.TabEntity
 import com.dragger2.reactnativetest1022.fragment.MainTabLayoutFragment
+import com.dragger2.reactnativetest1022.fragment.MainTabLayoutFragmentOne
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
 import com.flyco.tablayout.utils.UnreadMsgUtils
@@ -26,7 +27,7 @@ class MainTabLayoutActivity : BaseActivity() {
     private val mIconSelectIds = intArrayOf(R.mipmap.tab_home_select, R.mipmap.tab_speech_select, R.mipmap.tab_contact_select, R.mipmap.tab_more_select)    //已选择图标
     private val mIconUnselectIds = intArrayOf(R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect, R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect)  //未选择图标
     private val mTabEntitesList = ArrayList<CustomTabEntity>()  //下面菜单里存放的东西（菜单名，选中图标，未选中图标）
-//    private lateinit var mAdapter: FragmentAdapter
+    //    private lateinit var mAdapter: FragmentAdapter
     private var mFragmentList = ArrayList<Fragment>()
     private val random = Random()
 
@@ -42,12 +43,14 @@ class MainTabLayoutActivity : BaseActivity() {
             mTabEntitesList.add(TabEntity(mTitles[index], mIconSelectIds[index], mIconUnselectIds[index]))
         }
 
-        //加4个fragment
-        for (i in 0 until 4) {
+        //主页
+        mFragmentList.add(MainTabLayoutFragmentOne())
+        //加3个fragment
+        for (i in 1 until 4) {
             mFragmentList.add(MainTabLayoutFragment())
             var content = ""
             when (i) {
-                0 -> content = "首页"
+//                0 -> content = "首页"
                 1 -> content = "消息"
                 2 -> content = "联系人"
                 3 -> content = "更多"
@@ -60,7 +63,7 @@ class MainTabLayoutActivity : BaseActivity() {
     override fun initView() {
         super.initView()
         //数据绑定tabLayout
-        tlMainTabLayout.setTabData(mTabEntitesList,this,R.id.flMainTalLayout,mFragmentList)
+        tlMainTabLayout.setTabData(mTabEntitesList, this, R.id.flMainTalLayout, mFragmentList)
 
         //图标上添加未读消息
         tlMainTabLayout.showMsg(0, 55)

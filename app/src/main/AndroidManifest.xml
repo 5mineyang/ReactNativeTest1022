@@ -58,6 +58,8 @@
         <activity android:name=".activity.GlideActivity"/>
         <activity android:name=".activity.MainTabLayoutActivity"/>
         <activity android:name=".activity.JsoupPracticeActivity"/>
+        <activity android:name=".activity.IdentityAuthActivity"/>
+        <activity android:name=".activity.IdentityAuthActivityJava"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.ume.browser.fileprovider"

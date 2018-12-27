@@ -49,19 +49,20 @@ public class ExampleUnitTestJava2 {
     }
 
     //冒泡
-    private void bubbleSort(int[] array1) {
-        for (int i = array1.length - 1; i >= 0; i--) {
+    private void bubbleSort(int array[]) {
+        for (int i = array.length - 1; i >= 0; i--) {
             boolean flag = true;
             for (int j = 0; j < i; j++) {
-                //后面的比前面大 就换位置
-                if (array1[j] > array1[j + 1]) {
+                //前面的比后面大 就换位置
+                if (array[j] > array[j + 1]) {
                     //互换位置
-                    int temp = array1[j];
-                    array1[j] = array1[j + 1];
-                    array1[j + 1] = temp;
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                     flag = false;
                 }
             }
+            //优化循环次数
             if (flag) {
                 break;
             }
@@ -69,19 +70,19 @@ public class ExampleUnitTestJava2 {
     }
 
     //选择
-    private void selectSort(int[] array2) {
-        for (int i = 0; i < array2.length; i++) {
+    private void selectSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
             int index = i;  //待会比较位置
             //一轮下来最小的肯定在最左边了 然后再从1位置开始排。。。
-            for (int j = i + 1; j < array2.length; j++) {
-                if (array2[index] > array2[j]) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[index] > array[j]) {
                     //把下标指向它
                     index = j;
                 }
                 if (index != i) {
-                    int temp = array2[i];
-                    array2[i] = array2[index];
-                    array2[index] = temp;
+                    int temp = array[i];
+                    array[i] = array[index];
+                    array[index] = temp;
                 }
             }
         }
