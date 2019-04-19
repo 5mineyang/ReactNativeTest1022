@@ -24,11 +24,11 @@ class NestedScrollViewFragment : Fragment() {
     private lateinit var mAdapter: CommonAdapter<String>
     private var mList = ArrayList<String>()
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_nestedscrollview, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_nestedscrollview, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         initData()
@@ -49,7 +49,7 @@ class NestedScrollViewFragment : Fragment() {
     private fun initAdapter() {
         mLayoutManager = GridLayoutManager(context, 2)
         rvNestedScrollViewViewPager.layoutManager = mLayoutManager
-        mAdapter = CommonAdapter(context, R.layout.fragment_nestedscrollview_item, mList, holderConvert = { holder, t, _, _ ->
+        mAdapter = CommonAdapter(context!!, R.layout.fragment_nestedscrollview_item, mList, holderConvert = { holder, t, _, _ ->
             holder.apply {
                 setText(R.id.tvNestedScrollViewViewPagerRv, t)
             }

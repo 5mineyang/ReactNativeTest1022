@@ -30,7 +30,7 @@ open class MultiItemTypeAdapter<T>(protected var mContext: Context, open var dat
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(viewType)
-        val layoutId = itemViewDelegate.getItemViewLayoutId()
+        val layoutId = itemViewDelegate!!.getItemViewLayoutId()
         val holder = ViewHolder.createViewHolder(mContext, parent, layoutId)
         onViewHolderCreated(parent, holder, holder.convertView)
         setListener(parent, holder, viewType)

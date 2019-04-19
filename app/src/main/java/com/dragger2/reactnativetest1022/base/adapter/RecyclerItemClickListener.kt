@@ -15,6 +15,7 @@ import android.view.View
 
 class RecyclerItemClickListener// 点击回调
 (context: Context, recyclerView: RecyclerView?, private val mListener: OnItemClickListener?) : OnItemTouchListener {
+
     private val mGestureDetector: GestureDetector
 
     init {
@@ -40,14 +41,14 @@ class RecyclerItemClickListener// 点击回调
         })
     }
 
-    override fun onInterceptTouchEvent(view: RecyclerView?, e: MotionEvent?): Boolean {
-        if (view == null || e == null) {
+    override fun onInterceptTouchEvent(p0: RecyclerView, p1: MotionEvent): Boolean {
+        if (p0 == null || p1 == null) {
             return false
         }
-        val childView = view.findChildViewUnder(e.x, e.y)
-        if (childView != null && mListener != null && mGestureDetector.onTouchEvent(e)) {
+        val childView = p0.findChildViewUnder(p1.x, p1.y)
+        if (childView != null && mListener != null && mGestureDetector.onTouchEvent(p1)) {
             // 触发单击事件
-            mListener.onItemClick(childView, view.getChildLayoutPosition(childView))
+            mListener.onItemClick(childView, p0.getChildLayoutPosition(childView))
             return false//return true;
         }
         return false

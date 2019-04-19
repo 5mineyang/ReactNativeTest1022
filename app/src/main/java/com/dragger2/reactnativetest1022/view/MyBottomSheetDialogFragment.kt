@@ -38,7 +38,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
-        mContext = context
+        mContext = context!!
         mRootView = View.inflate(mContext, R.layout.custom_bottomdialog, null)
         dialog.setContentView(mRootView)
 
@@ -60,7 +60,8 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         super.onStart()
         //默认全屏展开
         mBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-        mBehavior.peekHeight = mHeight
+        //跳过折叠状态
+        mBehavior.skipCollapsed = true
 
         initListener()
     }

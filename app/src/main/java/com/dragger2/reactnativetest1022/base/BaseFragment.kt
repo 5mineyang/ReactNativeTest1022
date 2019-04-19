@@ -65,7 +65,7 @@ abstract class BaseFragment(private var isInject: Boolean = false) : Fragment(),
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         this.mIsVisible = !hidden
-        if (!activity.isFinishing && !activity.isDestroyed) {
+        if (!activity!!.isFinishing && !activity!!.isDestroyed) {
             if (hidden) onInVisibleToUser() else prepareFetchData()
         }
     }
