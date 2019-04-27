@@ -234,6 +234,15 @@
             android:layout_below="@+id/tvToNextJsoup"
             android:text="身份认证练习"
             />
+
+        <Button
+            android:id="@+id/tvToNextSurface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvToNextIdentityAuth"
+            android:text="SurfaceView"
+            android:textAllCaps="false"
+            />
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView

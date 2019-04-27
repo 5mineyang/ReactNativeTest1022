@@ -61,6 +61,7 @@
         <activity android:name=".activity.IdentityAuthActivity"/>
         <activity android:name=".activity.IdentityAuthActivityJava"/>
         <activity android:name=".activity.FlutterPractice"/>
+        <activity android:name=".activity.SurfaceActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.ume.browser.fileprovider"
