@@ -21,7 +21,7 @@ import java.util.*
 class SurfaceActivity : BaseActivity() {
     private lateinit var mSurfaceHolder: SurfaceHolder
     private var mTimer = Timer()
-    private var mMyTimerTask = MyTimerTask()
+    private var mMyTimerTask: MyTimerTask? = null
     private lateinit var Y_axis: Array<Int?>
     private var centerY = 0    //中心轴位置
     private var oldX = 0
@@ -49,6 +49,12 @@ class SurfaceActivity : BaseActivity() {
         super.initListener()
 
         btnSurfaceStartOne.setOnClickListener {
+            mMyTimerTask?.let {
+                it.cancel()
+                clearDraw()
+                currentX = 0
+            }
+            mMyTimerTask = MyTimerTask()
             oldY = centerY
             mTimer.schedule(mMyTimerTask, 0, 5)
         }
